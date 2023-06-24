@@ -1,4 +1,4 @@
-# Created By @xl444
+# Created By @TM411
 # Copyright By watan
 
 from os import getenv
@@ -31,8 +31,8 @@ SUPPORT = getenv("SUPPORT", "TM_412")
 DURATION_LIMIT = int(getenv("DURATION_LIMIT", "999"))
 CMD_MUSIC = list(getenv("CMD_MUSIC", ". / ! + - @ # $").split())
 BG_IMG = getenv("BG_IMG", "https://graph.org/file/ce27991ed1e6ace351956.jpg")
-SUDO_USERS = list(map(int, getenv("SUDO_USERS", "1854384004").split()))
-START_PIC = getenv("START_PIC", "https://graph.org/file/8882cbd7cc786826d9ecb.jpg")
+SUDO_USERS = list(map(int, getenv("SUDO_USERS", "6174915391").split()))
+START_PIC = getenv("START_PIC", "https://graph.org/file/38cacf9b084eea3e1d600.mp4")
 OWNER_USERNAME = getenv("OWNER_USERNAME", "rr8r9")
 IMG_1 = getenv("IMG_1", "https://graph.org/file/475127193de2444183fd4.jpg")
 IMG_2 = getenv("IMG_2", "https://graph.org/file/8882cbd7cc786826d9ecb.jpg")
