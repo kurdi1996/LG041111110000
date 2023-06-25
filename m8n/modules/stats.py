@@ -40,14 +40,14 @@ from m8n.database.ping import get_readable_time
 def dashmarkup():
     buttons = [
         [
-            InlineKeyboardButton(text="‹ الوقت ›", callback_data="UPT"),
-            InlineKeyboardButton(text="‹ الرام ›", callback_data="RAT"),
+            InlineKeyboardButton(text="‹ وه خت ›", callback_data="UPT"),
+            InlineKeyboardButton(text="‹ رام ›", callback_data="RAT"),
         ],
         [
-            InlineKeyboardButton(text="‹ الذاكرة ›", callback_data="CPT"),
-            InlineKeyboardButton(text="‹ القرص ›", callback_data="DIT"),
+            InlineKeyboardButton(text="‹ زاكيره ›", callback_data="CPT"),
+            InlineKeyboardButton(text="‹ قورص ›", callback_data="DIT"),
         ],
-        [InlineKeyboardButton(text="‹ رجوع ›", callback_data="settingm")],
+        [InlineKeyboardButton(text="‹ زفرين ›", callback_data="settingm")],
     ]
     return f"‹ اعدادات البوت ›", buttons
 
@@ -56,23 +56,23 @@ stats1 = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                text="‹ النظام ›", callback_data=f"sys_stats"
+                text="‹ داخل بون ›", callback_data=f"sys_stats"
             ),
             InlineKeyboardButton(
-                text="‹ البوت ›", callback_data=f"bot_stats"
+                text="‹ بوت ›", callback_data=f"bot_stats"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="‹ حساب المساعد ›", callback_data=f"assis_stats"
+                text="‹ ئه كاونتي هاري كار ›", callback_data=f"assis_stats"
             ),
             InlineKeyboardButton(
-                text="‹ التخزين ›", callback_data=f"sto_stats"
+                text="‹ خزن كرن ›", callback_data=f"sto_stats"
             )
         ],
        [
             InlineKeyboardButton(
-                text="‹ مسح ›", callback_data=f"statsclose"
+                text="‹ ژيبرن ›", callback_data=f"statsclose"
             ),
         ],
     ]
@@ -82,7 +82,7 @@ statsback = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                text="‹ رجوع ›", callback_data=f"gen_stats"
+                text="‹ زفرين ›", callback_data=f"gen_stats"
             ),
         ],
     ]
@@ -92,7 +92,7 @@ statswait = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                text="‹ اعدادات البوت ›",
+                text="‹ ظبتي بوتي ›",
                 callback_data=f"wait_stats",
             )
         ]
@@ -105,16 +105,16 @@ async def bot_sys_stats():
     mem = psutil.virtual_memory().percent
     disk = psutil.disk_usage("/").percent
     stats = f"""
-**• وقت التشغيل :** {get_readable_time((bot_uptime))}
+**• ده مێ شولكرني :** {get_readable_time((bot_uptime))}
 **• المعالج :** {cpu}%
-**• الرام :** {mem}%
-**• التخزين : **{disk}%"""
+**• رام :** {mem}%
+**• خزنكرن : **{disk}%"""
     return stats
 
 
 
 
-@app.on_message(command(["العدد", f"الاحصائيات"])
+@app.on_message(command(["ژماره", f"الاحصائيات"])
 & ~filters.edited) 
 async def gstats(_, message):
     start = datetime.now()
@@ -125,7 +125,7 @@ async def gstats(_, message):
     uptime = await bot_sys_stats()
     response = await message.reply_photo(
         photo=f"{IMG_1}",
-         caption=f"""‹ فتح الاعدادت ›"""
+         caption=f"""‹ فه كرنابرنامجا ›"""
     )
     end = datetime.now()
     resp = (end - start).microseconds / 1000
@@ -135,7 +135,7 @@ async def gstats(_, message):
 - البنك: `{resp} مللي ثانية`
 {uptime}
 
-**- احصل على الاحصائيات المطلوبة عن طريق الازرار ادناه**
+**- بوفه كرنا هه رتشته كي به شين خاري فه كه**
     """
     await response.edit_text(smex, reply_markup=stats1)
     return
